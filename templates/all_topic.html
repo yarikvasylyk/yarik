@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block context %}
+{% for topic in  topics %}
+    <h1> <a href="/topic/{{ topic.pk }}">{{ topic.title }} </a> </h1>
+    <p> {{ topic.body }}</p>
+{% endfor %}
+{% endblock %}

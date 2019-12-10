@@ -2,18 +2,31 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-
-def new_article(request):
-
-    return HttpResponse("Hello world")
+from .models import Topic
 
 
-def new_comment(request):
+def topics(request):
 
-    return HttpResponse("Create comment")
+    topics = Topic.objects.all()
+    return render(request,
+                  'all_topic.html',
+                  {
+                      'topics': topics,
+
+                  }
+                 )
 
 
-def all_article(request):
-    return HttpResponse("all_article")
+def topic(request, topic):
+
+    topic = Topic.objects.get(pk=topic)
+    return render(request,
+                  'topic.html',
+                  {
+                      'title': topic.title,
+                      'body': topic.body
+                  }
+                 )
+
 
 

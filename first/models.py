@@ -4,7 +4,8 @@ from django.db import models
 
 
 class Topic(models.Model):
-    pass
+    title = models.CharField(max_length=100)
+    body = models.TextField()
 
 
 class Comment(models.Model):
