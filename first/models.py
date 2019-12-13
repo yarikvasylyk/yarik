@@ -1,6 +1,9 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import AbstractUser
+
 
 
 class Topic(models.Model):
@@ -8,10 +11,6 @@ class Topic(models.Model):
     body = models.TextField()
 
 
-class Comment(models.Model):
-    pass
 
 
-class Author(models.Model):
-    pass
 

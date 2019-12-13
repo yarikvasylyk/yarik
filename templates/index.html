@@ -6,7 +6,9 @@
 </head>
 <body>
 {% block header %}
-<h1>My Forum</h1>
+<h1>
+    <a href="/topics/{{ topics.pk }}"> {{ topics.title }} My Forum</a>
+</h1>
 {% endblock %}
 
 {% block context %}
